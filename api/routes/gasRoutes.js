@@ -24,6 +24,13 @@ router.post('/add', async (req, res) => {
 
 // GET: Get all readings
 router.get('/', async (req, res) => {
+   const token = req.headers['x-api-key']; // ← قراءة الهيدر
+  
+  if (!token || token !== 'your_token_here') {
+    return res.status(401).json({ message: 'Unauthorized - Invalid token' });
+  }
+
+  
   try {
     const readings = await GasReading.find().sort({ timestamp: -1 });
     res.status(200).json(readings);
