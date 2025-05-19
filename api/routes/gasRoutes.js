@@ -6,6 +6,12 @@ const router = express.Router();
 
 // POST: Add a gas reading
 router.post('/add', async (req, res) => {
+  const token = req.headers['x-api-key']; // ← قراءة الهيدر
+  
+  if (!token || token !== 'your_token_here') {
+    return res.status(401).json({ message: 'Unauthorized - Invalid token' });
+  }
+
   try {
     const { gas, temperature } = req.body;
     const newReading = new GasReading({ gas, temperature });
