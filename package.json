@@ -1,0 +1,26 @@
+{
+  "name": "gas-detection-api",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/YousefHassan404/Smart-Gas-Detection-System#readme",
+  "bugs": {
+    "url": "https://github.com/YousefHassan404/Smart-Gas-Detection-System/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YousefHassan404/Smart-Gas-Detection-System.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "mongoose": "^7.8.7"
+  }
+}
